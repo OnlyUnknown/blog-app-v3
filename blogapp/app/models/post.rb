@@ -1,17 +1,18 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
-    belongs_to :author, class_name: "User" 
-    has_many :likes
-    has_many :comments
+  belongs_to :author, class_name: 'User'
+  has_many :likes
+  has_many :comments
 
-    def self.update_posts_counter
-        find = User.find_by(name: "Tom")
-            find.update(posts_counter: "2")
-    end
+  def self.update_posts_counter
+    find = User.find_by(name: 'Tom')
+    find.update(posts_counter: '2')
+  end
 
-    def self.most_recent_post(name)
-            Post.limit(5).order(created_at: :desc).where(title:name)
-        end
-
+  def self.most_recent_post(name)
+    Post.limit(5).order(created_at: :desc).where(title: name)
+  end
 end
 
 # first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
@@ -29,4 +30,3 @@ end
 #    fifth_comment = Comment.create(post: third_post, author: second_user, text: 'Second comment!' )
 #    sixth_comment = Comment.create(post: fourth_post, author: second_user, text: 'Hi Tom!' )
 #    seventh_comment = Comment.create(post: fourth_post, author: second_user, text: 'Second comment!' )
-

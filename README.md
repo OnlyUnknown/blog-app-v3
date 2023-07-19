@@ -80,8 +80,6 @@ Install this project with:
 
 ```sh
   bundle install
-  gem install --no-document rubocop -v '>= 1.0, < 2.0'
-  gem install rspec
 ```
 
 ### Usage

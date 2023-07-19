@@ -4,8 +4,8 @@ class Post < ApplicationRecord
     has_many :comments
 
     def self.update_posts_counter
-        find = Post.find_by(title: "Basket ball")
-        find.update(comments_counter: "2")
+        find = User.find_by(name: "Tom")
+            find.update(posts_counter: "2")
     end
 
     def self.most_recent_post(name)

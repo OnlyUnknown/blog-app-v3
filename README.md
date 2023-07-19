@@ -56,10 +56,13 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need to have the following instaled in your machine :
 
 ```sh
- bundle install
+- Ruby
+- Ruby on Rails
+- IDE
+- Browser
 ```
 
 ### Setup
@@ -87,9 +90,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  ruby main.rb
-  or
-  ./main
+  rails s
 ```
 
 ### Run tests

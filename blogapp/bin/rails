@@ -1,0 +1,6 @@
+# rubocop:disable Lint/ScriptPermission
+#!/usr/bin/env ruby
+# rubocop:enable Lint/ScriptPermission
+APP_PATH = File.expand_path('../config/application', __dir__)
+require_relative '../config/boot'
+require 'rails/commands'

@@ -3,8 +3,8 @@ class User < ApplicationRecord
   has_many :likes
   has_many :comments
   validates :name, presence: true
-  validates :post_counter, comparison: { greater_than_or_equal_to: 0 }
-  validates :post_counter, numericality: { only_integer: true }
+  validates :posts_counter, comparison: { greater_than_or_equal_to: 0 }
+  validates :posts_counter, numericality: { only_integer: true }
   def self.most_recent(input)
     User.limit(3).order(created_at: :desc).where(name: input)
   end

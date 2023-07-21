@@ -10,9 +10,8 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true }
 
   def update_posts_counter(user)
-  increment = user.posts_counter + 1
-  user.update(posts_counter: increment)
-    
+    increment = user.posts_counter + 1
+    user.update(posts_counter: increment)
   end
 
   def most_recent_post(comment)

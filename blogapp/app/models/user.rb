@@ -8,7 +8,6 @@ class User < ApplicationRecord
   def self.most_recent(input)
     User.limit(3).order(created_at: :desc).where(name: input)
   end
-# Name must not be blank.
-# PostsCounter must be an integer greater than or equal to zero.
-
+  # Name must not be blank.
+  # PostsCounter must be an integer greater than or equal to zero.
 end

@@ -9,12 +9,13 @@ class Post < ApplicationRecord
   validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true }
 
-  def self.update_posts_counter
-    find = User.find_by(name: 'Tom')
-    find.update(posts_counter: '2')
+  def update_posts_counter(user)
+  increment = user.posts_counter + 1
+  user.update(posts_counter: increment)
+    
   end
 
-  def self.most_recent_post(name)
-    Post.limit(5).order(created_at: :desc).where(title: name)
+  def most_recent_post(comment)
+    Comment.where(post_id: 1)
   end
 end

@@ -3,8 +3,8 @@ class Comment < ApplicationRecord
   belongs_to :post, class_name: 'Post'
 
   # A method that updates the comments counter for a post.
-  def update_comment_counter
-    find = Post.find_by(title: 'Basket ball')
-    find.update(post_counter: '2')
+  def update_comment_counter(post)
+    increment = post.comments_counter + 1
+  post.update(comments_counter: increment)
   end
 end

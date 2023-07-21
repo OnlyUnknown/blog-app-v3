@@ -16,6 +16,6 @@ class Post < ApplicationRecord
   end
 
   def most_recent_post(comment)
-    Comment.where(post_id: 1)
+    Post.where(id: comment.post_id)
   end
 end

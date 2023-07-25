@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def show
-  @post = Post.where(id: params.require(:id))
-  @all = Post.all.where(id: params.require(:id))
+    @post = Post.where(id: params.require(:id))
+    @all = Post.all.where(id: params.require(:id))
   end
 
   def index

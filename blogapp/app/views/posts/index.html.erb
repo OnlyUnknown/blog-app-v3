@@ -1,12 +1,16 @@
-<h1>All posts for 
-<%= @user[0].name%>
+<h1>All posts for user<h1>
+
+<% if false %>
+ <%= @user[0].name%>
  </h1> 
 
 
 <% @posts.each do |post| %>
     <p> 
+    <%= post.id %> 
     <%= post.title %> 
      
     </p>
     <br>
+    <% end %>
     <% end %>

@@ -32,7 +32,8 @@
         <p class=box> 
         <% @comment = post.most_recent_comments(post.id) %> 
         <% @comment.each do |com| %>
-        username: <%=com.text%><br>
+        <% @username = User.where(id: com.author)%>
+        <%=@username[0].name%> : <%=com.text%><br>
          <% end %>
         </p>
         <br>

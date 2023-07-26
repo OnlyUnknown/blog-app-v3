@@ -15,6 +15,6 @@ class Post < ApplicationRecord
   end
 
   def most_recent_comments(comment)
-Comment.limit(3).where(post_id: comment)
+    Comment.limit(3).where(post_id: comment)
   end
 end

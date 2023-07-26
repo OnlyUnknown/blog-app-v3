@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ .user_holder{
+    height: 75px;
+    display: flex;
+ }
+
+ .user_name{
+    display: flex;
+    width: 300px;
+    height: 75px;
+    margin-left: 10px;
+    border: black 2px solid;
+ }
+
+ .posts_counter{
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: 5px;
+ }
+
+ .user_name_text{
+    margin-left: 5px;
+ }

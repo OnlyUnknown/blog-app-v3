@@ -1,13 +1,14 @@
 <h1>All users</h1>
 
-<% if false %>
-
 
  <% @users.each do |user| %>
-     <p> 
-     <%= user.id %> 
-     <%= user.name %> 
-     </p>
+    <div class="user_holder">
+    <img src=/assets/xpfs.jpg >
+     <div class="user_name"> 
+     <h2 class="user_name_text"><%= user.name %> </h2>
+
+     <p class="posts_counter">Number of posts: <%= user.posts_counter %> </p>
+     </div>
+     </div>
      <br>
      <% end %>
-<% end %>

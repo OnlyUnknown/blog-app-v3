@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @users = User.where(id: params.require(:id))
+    @posts = Post.where(author: params.require(:id))
   end
 
   def index

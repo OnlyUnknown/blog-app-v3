@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'posts/:user_id/posts/:id', to: 'posts#show'
+  root 'users#index'
+  get 'users/:user_id/posts/:id', to: 'posts#show'
   get 'users/:user_id/posts', to: 'posts#index'
   get 'users/:id', to: 'users#show'
   get 'users', to: 'users#index'

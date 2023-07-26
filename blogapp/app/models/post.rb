@@ -14,8 +14,7 @@ class Post < ApplicationRecord
     user.update(posts_counter: increment)
   end
 
-  def most_recent_post(comment)
-    Post.limit(3).where(id: comment.post_id)
-    'Cars'
+  def most_recent_comments(comment)
+    Comment.limit(3).where(post_id: comment)
   end
 end

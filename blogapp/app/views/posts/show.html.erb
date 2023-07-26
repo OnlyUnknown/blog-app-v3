@@ -1,14 +1,20 @@
 <h1>Show the Specified post</h1>
+<div class=box>
+<h2>Post #<%= @post[0].id %> by <%=@user[0].name %> </h2>
+<h3><%= @post[0].title%></h3>
+<p class="right">comment counter: <%= @post[0].comments_counter%>, likes counter:<%= @post[0].likes_counter %></p>
+    
+<%= @post[0].text%>
+</div>
+<p class=box> 
+<% @comment = @post[0].most_recent_comments(@post[0].id) %> 
+<% @comment.each do |com| %>
+<% @username = User.where(id: com.author)%>
+<%=@username[0].name%> : <%=com.text%><br>
+ <% end %>
+</p>
+<br>
 
-<% if false %>
+</p>
 
 
- <% @posts.each do |post| %>
-     <p> 
-     <%= post.id %> 
-     <%= post.title %> 
-     
-     </p>
-     <br>
-     <% end %>
-     <% end %>

@@ -35,3 +35,11 @@
  .user_name_text{
     margin-left: 5px;
  }
+
+ .box {
+    border: black 2px solid;
+ }
+
+ .right {
+    margin-right: auto;
+ }

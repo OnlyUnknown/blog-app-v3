@@ -1,12 +1,32 @@
 <h1>Specified user</h1>
 
-<% if false %>
 
- <% @users.each do |user| %>
-     <p> 
-     <%= user.id %> 
-     <%= user.name %> 
-     </p>
+<% @users.each do |user| %>
+    <div class="user_holder">
+    <img src=/assets/xpfs.jpg >
+     <div class="user_name"> 
+     <h2 class="user_name_text"><%= user.name %> </h2>
+
+     <p class="posts_counter">Number of posts: <%= user.posts_counter %> </p>
+     </div>
+     </div>
      <br>
      <% end %>
-<% end %>
+<div class="box">
+Bio: <br>
+<%= @users[0].bio%>
+</div>
+<br>
+<% @posts.each do |post| %>
+    <div class="box"> 
+    POST#<%= post.id %> 
+    <br>
+    <br>
+    <%= post.title %> 
+     <br>
+    <p class="right">comment counter: <%= post.comments_counter%>, likes counter:<%= post.likes_counter %></p>
+    </div>
+    <br>
+    <% end %>
+
+<button>see all posts</button>

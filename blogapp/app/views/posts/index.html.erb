@@ -1,16 +1,42 @@
 <h1>All posts for user<h1>
 
-<% if false %>
- <%= @user[0].name%>
+
  </h1> 
 
 
+    <div class="user_holder">
+    <img src=/assets/xpfs.jpg >
+     <div class="user_name"> 
+     <h2 class="user_name_text">
+     <%= @user[0].name%> </h2>
+
+     <p class="posts_counter">Number of posts: <%= @user[0].posts_counter %> </p>
+     </div>
+     </div>
+     <br>
+
+
+
 <% @posts.each do |post| %>
-    <p> 
-    <%= post.id %> 
+    <div class="box"> 
+    POST#<%= post.id %> 
+    <br>
+    <br>
     <%= post.title %> 
-     
+     <br>
+    <p class="right">comment counter: <%= post.comments_counter%>, likes counter:<%= post.likes_counter %></p>
+    </div>
+    <br>
+
+    </p>
+        <p class=box> 
+        <% @comment = post.most_recent_comments(post.id) %> 
+        <% @comment.each do |com| %>
+        username: <%=com.text%><br>
+         <% end %>
+        </p>
+        <br>
+
     </p>
     <br>
-    <% end %>
     <% end %>

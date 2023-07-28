@@ -1,0 +1,12 @@
+<%@current=User.first.id%>
+
+<%= form_with url: @post, local: true do |f| %>
+
+    <%= f.text_field :title %>
+    <%= f.text_area :text %>
+    <%= f.text_field :comments_counter %>
+    <%= f.text_field :likes_counter %>
+   <%= f.text_field :author_id %>
+    <%= f.submit %>
+  
+  <% end %>

@@ -9,9 +9,10 @@ class CommentController < ApplicationController
     @comment = Comment.new(post_params)
     @comment.save
   end
+
   private
 
   def post_params
-    params.require(:comment).permit( :text, :post_id, :author_id)
+    params.require(:comment).permit(:text, :post_id, :author_id)
   end
 end

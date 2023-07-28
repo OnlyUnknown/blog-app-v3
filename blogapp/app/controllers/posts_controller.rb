@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.save
   end
-  
+
   private
 
   def post_params

@@ -1,0 +1,10 @@
+<h1>Wrtie your Comment to the Post ID: <%= @cpost.to_s %></h1>
+
+<%= form_with model: @comment, url:'/comment' do |f| %>
+    <%=f.label :text%><br>
+    <%= f.text_area :text %><br>
+    <%= f.hidden_field :post_id, value: @cpost %>
+   <%= f.hidden_field :author_id, value: @comment.author_id%>
+    <%= f.submit %>
+  
+  <% end %>

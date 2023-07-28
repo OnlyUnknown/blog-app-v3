@@ -4,8 +4,12 @@
 <h3><%= @post[0].title%></h3>
 <p class="right">comment counter: <%= @post[0].comments_counter%>, likes counter:<%= @post[0].likes_counter %></p>
     
+
+
 <%= @post[0].text%>
 </div>
+<br>
+<a href=<%= @post[0].id%><%="/like"%>>Add a like to it</a>
 <p class=box> 
 <% @comment = @post[0].most_recent_comments(@post[0].id) %> 
 <% @comment.each do |com| %>
@@ -16,6 +20,8 @@
 <br>
 
 </p>
+
+<a href=<%= @post[0].id%><%="/comment"%>>Add a comment</a>
 
 
 

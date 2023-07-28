@@ -1,0 +1,8 @@
+<h1>Do you like the Post #<%=params.require(:id).to_s%></h1>
+
+<%= form_with model: @like, url:'/like' do |f| %>
+  <%= f.hidden_field :author_id, value: params.require(:user_id) %>
+    <%= f.hidden_field :post_id, value: params.require(:id) %>
+    <%= f.submit value: "I like it" %>
+    
+  <% end %>

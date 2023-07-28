@@ -3,8 +3,11 @@ class Like < ApplicationRecord
   belongs_to :post, class_name: 'Post'
 
   # A method that updates the likes counter for a post.
-  def update_like_counter(post)
+  def update_like_counter
+    post = Post.find_by(id: post_id)
     increment = post.likes_counter + 1
-    post.update(likes_counter: increment)
+    post.comments_counter = post.comments_counter
+    post.likes_counter = increment
+    post.save
   end
 end

@@ -1,6 +1,4 @@
-# rubocop:disable Lint/ScriptPermission
 #!/usr/bin/env ruby
-# rubocop:enable Lint/ScriptPermission
 require 'fileutils'
 
 # path to your application root.

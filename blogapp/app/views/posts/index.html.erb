@@ -19,15 +19,20 @@
 
 <% @posts.each do |post| %>
     <div class="box"> 
+    <a href=<%="posts/"%><%= post.id%>>
+    <br>
     POST#<%= post.id %> 
     <br>
     <br>
+    
     <%= post.title %> 
      <br>
+     <p><%= post.text%></p>
+     <br>
+     </a>
     <p class="right">comment counter: <%= post.comments_counter%>, likes counter:<%= post.likes_counter %></p>
     </div>
     <br>
-
     </p>
         <p class=box> 
         <% @comment = post.most_recent_comments(post.id) %> 

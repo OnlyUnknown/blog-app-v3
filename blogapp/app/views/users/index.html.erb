@@ -2,6 +2,7 @@
 
 
  <% @users.each do |user| %>
+   <a href=<%="/users/"%><%= user.id%>>
     <div class="user_holder">
     <img src=/assets/xpfs.jpg >
      <div class="user_name"> 
@@ -10,5 +11,6 @@
      <p class="posts_counter">Number of posts: <%= user.posts_counter %> </p>
      </div>
      </div>
+     </a>
      <br>
      <% end %>

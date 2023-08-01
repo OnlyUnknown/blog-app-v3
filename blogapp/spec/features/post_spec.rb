@@ -77,25 +77,25 @@ end
         it "shows that it has by the user name" do
         expect(page).to have_content('by Tom')
         end
-        it "shows that it has by the user name" do
+        it "shows that it has title of the post" do
         expect(page).to have_content("Cars")
         end
-        it "shows that it has by the user name" do
+        it "shows that it has the owner of the post" do
       expect(page).to have_content('Tom')
       end
-      it "shows that it has by the user name" do
+      it "shows that it has by the comment counter" do
       expect(page).to have_content("comment counter: 1")
       end
-      it "shows that it has by the user name" do
+      it "shows that it has by the Likes coutner" do
       expect(page).to have_content("likes counter:20")
       end
-      it "shows that it has by the user name" do
+      it "shows that it has by the content of the post" do
       expect(page).to have_content("text of first post")
       end
-      it "shows that it has by the user name" do
+      it "shows that it has by the comenters" do
       expect(page).to have_content("Lilly : text")
       end
-      it "shows that it has by the user name" do
+      it "shows that it has by the commenters" do
       expect(page).to have_content("Tom : text")
       end
   end

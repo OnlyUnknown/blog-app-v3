@@ -54,4 +54,36 @@ end
   end
 
 
+  describe 'User view', :type => :feature do
+    
+    describe 'index page' do
+      before{visit "/users"}
+    scenario 'shows all users name' do
+      sleep(3)
+      expect(page).to have_content('Tom')
+      expect(page).to have_content('Lilly')
+      expect(page).to have_content("Number of posts: 3")
+      expect(page).to have_css("img[src*='/assets/xpfs.jpg']")
+      find('a[href="/users/1"]').click
+      sleep(3)
+      expect(page).to have_content("Tom")
+    end
+    end
+    describe 'show page' do
+      before{visit "/users/1"}
+      it 'show the specefied user' do
+      expect(page).to have_content("Tom")
+      expect(page).to have_content("Number of posts: 3")
+      expect(page).to have_content("bio")
+      expect(page).to have_css("img[src*='/assets/xpfs.jpg']")
+      expect(page).to_not have_content("Fourth post")
+      expect(page).to have_content("see all posts")
+      click_link('see all posts')
+      expect(page).to have_content("Fourth post")
+      visit "/users/1"
+      click_link("POST#1")
+      expect(page).to have_content("text of first post")
+      end
+    end
+  end
 end

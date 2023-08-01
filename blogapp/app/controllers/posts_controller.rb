@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @user = User.where(id: params.require(:user_id))
-    @posts = Post.limit(3).where(author: params.require(:id))
+    @posts = Post.all.includes(:author).where(users: {id: params[:id]})
   end
 
   def new

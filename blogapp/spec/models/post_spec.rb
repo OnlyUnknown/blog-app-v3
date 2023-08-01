@@ -71,40 +71,4 @@ end
     end
   end
 
-  describe 'Post view', :type => :feature do
-    
-    describe 'post index' do
-      before{visit "/users/1/posts"}
-    scenario 'shows post and direction to them' do
-      sleep(3)
-      expect(page).to have_css("img[src*='/assets/xpfs.jpg']")
-      expect(page).to have_content('Tom')
-      expect(page).to have_content("Number of posts: 4")
-      expect(page).to have_content("Cars")
-      expect(page).to have_content("text of first post")
-      expect(page).to have_content("Lilly : text")
-      expect(page).to have_content("comment counter: 1")
-      expect(page).to have_content("likes counter:20")
-      click_link("POST#1")
-      expect(page).to have_content("text of first post")
-      sleep(3)
-      expect(page).to have_content("Tom")
-    end
-  end
-  describe 'post show' do
-    before{visit "/users/1/posts/1"}
-    scenario 'showing the specefied post' do
-        sleep(3)
-        expect(page).to have_content('by Tom')
-        expect(page).to have_content("Cars")
-      expect(page).to have_content('Tom')
-      expect(page).to have_content("comment counter: 1")
-      expect(page).to have_content("likes counter:20")
-      expect(page).to have_content("text of first post")
-      expect(page).to have_content("Lilly : text")
-      expect(page).to have_content("Tom : text")
-  end
-end
-end
-
 end

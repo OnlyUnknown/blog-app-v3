@@ -8,12 +8,6 @@ AllCops:
     - "Rakefile"
     - "node_modules/**/*"
     - 'bin/{rails,rake}'
-    - "bin/bundle"
-    - "bin/importmap"
-    - "bin/rails"
-    - "bin/rake"
-    - "bin/setup"
-
 
   DisplayCopNames: true
 

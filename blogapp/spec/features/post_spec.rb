@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  user = User.new(id: 1, name: 'Tom', photo: 'Link', bio: 'bio', posts_counter: 4)
-  user2 = User.new(id: 2, name: 'Lilly', photo: 'Link', bio: 'bio', posts_counter: 0)
+  user = User.new(id: 1, name: 'Tom', photo: 'Link', bio: 'bio', posts_counter: 4,  email: "Tom@name.com", password: "112112")
+  user2 = User.new(id: 2, name: 'Lilly', photo: 'Link', bio: 'bio', posts_counter: 0, email: "Lilly@name.com", password: "122122")
   post = Post.new(id: 1, author: user, title: 'Cars', text: 'text of first post', comments_counter: 1, likes_counter: 20)
   post2 = Post.new(id: 2, author: user, title: 'Cars', text: 'text', comments_counter: 0, likes_counter: 20)
   post3 = Post.new(id: 3, author: user, title: 'Cars', text: 'text', comments_counter: 0, likes_counter: 20)
   post4 = Post.new(id: 4, author: user, title: 'Fourth post', text: 'text', comments_counter: 0, likes_counter: 20)
-  comment = Comment.new(author: user2, post:, text: 'text')
-  comment1 = Comment.new(author: user, post:, text: 'text')
+  comment = Comment.new(author: user2, post:post, text: 'text')
+  comment1 = Comment.new(author: user, post:post, text: 'text')
 
   before(:all) do
     user.save

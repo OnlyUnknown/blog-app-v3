@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'users#index'
   get 'users/:user_id/posts', to: 'posts#index'
   get 'users/:user_id/posts/new', to: 'posts#new'

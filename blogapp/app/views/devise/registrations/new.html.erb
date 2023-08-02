@@ -38,7 +38,9 @@
   <%password = 'the secret password'%>
   <%new_hashed_password = User.new(:password => password).encrypted_password%>
 
-  <div class="actions">
+  <div class="actions .css-button-sliding-to-bottom--grey
+  .css-button-sliding-to-bottom--grey
+  .css-button-sliding-to-bottom--grey">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>

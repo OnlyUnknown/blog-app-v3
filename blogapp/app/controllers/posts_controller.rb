@@ -6,7 +6,10 @@ class PostsController < ApplicationController
 
   def index
     @user = User.where(id: params.require(:user_id))
-    @posts = Post.limit(3).where(author: params.require(:id))
+    @posts = Post.all.includes(:author).where(users: { id: params[:user_id] })
+    @posts.each do |post|
+      puts "#{post.title} was written by #{post.author.name}"
+    end
   end
 
   def new

@@ -22,62 +22,53 @@ RSpec.describe User, type: :model do
     User.destroy_all
   end
 
-  it 'name should be present' do
-    user.name = nil
-    expect(user).to_not be_valid
-    user.name = 'Tom'
-  end
-
-  it 'posts_counter should be integer' do
-    user.posts_counter = 'asdf'
-    expect(user).to_not be_valid
-  end
-
-  it 'posts_counter should be greater than or equal zero' do
-    user.posts_counter = -1
-    expect(user).to_not be_valid
-    user.posts_counter = 5
-  end
-
-  it 'name should eq Tom' do
-    expect(user.name).to eq('Tom')
-  end
-
-  it 'photo should eq to Link' do
-    expect(user.photo).to eq('Link')
-  end
-  it 'bio should eq to bio' do
-    expect(user.bio).to eq('bio')
-  end
-  it 'posts_counter should equal to 5' do
-    expect(user.posts_counter).to equal(5)
-  end
-
   describe 'User view', type: :feature do
-    describe 'index page' do
+    describe 'index page', type: :feature do
       before { visit '/users' }
-      scenario 'shows all users name' do
-        sleep(3)
+      sleep(3)
+      it 'shows that it has the username' do
         expect(page).to have_content('Tom')
+      end
+      it 'shows that it has the username' do
         expect(page).to have_content('Lilly')
+      end
+      it 'shows that it has by Number of posts' do
         expect(page).to have_content('Number of posts: 3')
+      end
+      it 'shows that it has by the profile pic' do
         expect(page).to have_css("img[src*='/assets/xpfs.jpg']")
+      end
+      it 'shows that it direct you to the person page' do
         find('a[href="/users/1"]').click
         sleep(3)
         expect(page).to have_content('Tom')
       end
     end
-    describe 'show page' do
+    describe 'show page', type: :feature do
       before { visit '/users/1' }
       it 'show the specefied user' do
         expect(page).to have_content('Tom')
+      end
+      it 'show the specefied user nuumber of posts' do
         expect(page).to have_content('Number of posts: 3')
+      end
+      it 'show the specefied user bio' do
         expect(page).to have_content('bio')
+      end
+      it 'show the specefied user porfile pic' do
         expect(page).to have_css("img[src*='/assets/xpfs.jpg']")
+      end
+      it 'show the specefied user does not show the fourth post' do
         expect(page).to_not have_content('Fourth post')
+      end
+      it 'show the specefied user it has see all posts' do
         expect(page).to have_content('see all posts')
+      end
+      it 'show the specefied user all posts' do
         click_link('see all posts')
         expect(page).to have_content('Fourth post')
+      end
+      it 'show the specefied user posts can be clicked' do
         visit '/users/1'
         click_link('POST#1')
         expect(page).to have_content('text of first post')

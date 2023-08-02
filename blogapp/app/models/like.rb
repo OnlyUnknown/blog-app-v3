@@ -6,7 +6,6 @@ class Like < ApplicationRecord
   def update_like_counter
     post = Post.find_by(id: post_id)
     increment = post.likes_counter + 1
-    post.comments_counter = post.comments_counter
     post.likes_counter = increment
     post.save
   end

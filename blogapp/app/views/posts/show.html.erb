@@ -15,7 +15,7 @@
 <% @comment.each do |com| %>
 <% @username = User.where(id: com.author)%>
 <%=@username[0].name%> : <%=com.text%><br>
- <% end %>
+<% end %>
 </p>
 <br>
 

@@ -7,6 +7,9 @@
 
 
 <%= @post[0].text%>
+<% if current_user && current_user == @post.author %>
+<%= button_to 'Delete', user_post_path(current_user, @post), method: :delete, class: 'delete-btn' %>
+<% end %>
 </div>
 <br>
 <a href=<%= @post[0].id%><%="/like"%>>Add a like to it</a>
@@ -15,6 +18,9 @@
 <% @comment.each do |com| %>
 <% @username = User.where(id: com.author)%>
 <%=@username[0].name%> : <%=com.text%><br>
+<% if current_user && current_user == comment.author %>
+          <%= button_to 'Delete', user_post_comment_path(current_user, @post, comment), method: :delete, class: 'delete' %>
+        <% end %>
 <% end %>
 </p>
 <br>
@@ -22,6 +28,3 @@
 </p>
 
 <a href=<%= @post[0].id%><%="/comment"%>>Add a comment</a>
-
-
-
